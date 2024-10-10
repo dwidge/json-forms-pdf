@@ -1,0 +1,61 @@
+{
+  "name": "@dwidge/json-forms-pdf",
+  "version": "0.0.1",
+  "description": "React Pdf renderers for Json Forms.",
+  "repository": "github:dwidge/json-forms-pdf",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prepare": "rimraf dist && ncp assets/ dist/ && tsc -b tsconfig*",
+    "dev": "tsc -w",
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "@dwidge/class-name-rnw": "0.0.1",
+    "@jsonforms/core": "^3.4.0",
+    "@jsonforms/react": "^3.4.0",
+    "@react-pdf/layout": "3.6.4",
+    "@react-pdf/textkit": "4.2.1",
+    "@react-pdf/renderer": "3.1.17",
+    "@rneui/base": "4.0.0-rc.7",
+    "@rneui/themed": "4.0.0-rc.8",
+    "ajv": "^8.17.1",
+    "assert": "^2.1.0",
+    "react": "^18.2",
+    "react-native": "^0.74.5",
+    "react-native-web": "^0.19.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "expect": "^29.7.0",
+    "ncp": "^2.0.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@9.7.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@react-pdf/layout": "3.6.4",
+      "@react-pdf/textkit": "4.2.1"
+    }
+  }
+}
