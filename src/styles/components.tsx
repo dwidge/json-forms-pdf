@@ -17,7 +17,9 @@ const Debug = ({
 }) =>
   debug ? (
     <PDF.View style={{ flexDirection: "column" }}>
-      <PDF.Text style={{ fontSize: 8, color: "white", backgroundColor: "black" }}>
+      <PDF.Text
+        style={{ fontSize: 8, color: "white", backgroundColor: "black" }}
+      >
         {themeKey} {className}
       </PDF.Text>
       {children}
@@ -29,24 +31,33 @@ const Debug = ({
 const wrap = withClassName(Debug);
 
 export const Text = wrap(
-  ({ children, ...props }: { variant?: string; id?: string; children?: React.ReactNode }) => (
-    <PDF.Text {...props}>{children}</PDF.Text>
-  ),
-  "StyledText"
+  ({
+    children,
+    ...props
+  }: {
+    variant?: string;
+    id?: string;
+    children?: React.ReactNode;
+  }) => <PDF.Text {...props}>{children}</PDF.Text>,
+  "StyledFormText",
 );
 export const View = wrap(
   ({ children, ...props }: { id?: string; children?: React.ReactNode }) =>
     children ? <PDF.View {...props}>{children}</PDF.View> : null,
-  "StyledView"
+  "StyledFormView",
 );
 
 export const DataTable = Object.assign(View, {
   Header: View,
   Title: wrap(
-    ({ children, ...props }: { numeric?: boolean; children?: React.ReactNode }) => (
-      <Text {...props}>{children}</Text>
-    ),
-    "StyledText"
+    ({
+      children,
+      ...props
+    }: {
+      numeric?: boolean;
+      children?: React.ReactNode;
+    }) => <Text {...props}>{children}</Text>,
+    "StyledFormText",
   ),
   Cell: View,
   Row: View,
@@ -82,7 +93,7 @@ export const List = Object.assign(
           {Right && <Right />}
         </View>
       ),
-      "StyledView"
+      "StyledFormView",
     ),
     Accordion: wrap(
       ({
@@ -100,19 +111,21 @@ export const List = Object.assign(
           {children}
         </View>
       ),
-      "StyledView"
+      "StyledFormView",
     ),
-  }
+  },
 );
 
 export const Avatar = Object.assign(
   {},
   {
     Text: wrap(
-      ({ label = "", ...props }: { label?: string }) => <Text {...props}>{label}</Text>,
-      "StyledText"
+      ({ label = "", ...props }: { label?: string }) => (
+        <Text {...props}>{label}</Text>
+      ),
+      "StyledFormText",
     ),
-  }
+  },
 );
 
 export const Menu = Object.assign(
@@ -145,7 +158,7 @@ export const Menu = Object.assign(
         {title}
       </Text>
     ),
-  }
+  },
 );
 
 export const Title = Text;
@@ -159,7 +172,7 @@ export const Button = wrap(
     disabled?: boolean;
     children?: React.ReactNode;
   }) => children,
-  "StyledButton"
+  "StyledFormButton",
 );
 export const IconButton = wrap(
   ({}: {
@@ -168,7 +181,7 @@ export const IconButton = wrap(
     accessibilityLabel?: string;
     disabled?: boolean;
   }) => <></>,
-  "StyledButton"
+  "StyledFormButton",
 );
 export const TextInput = ({
   value = "",
@@ -250,7 +263,7 @@ export const ScrollView = wrap(
       {children}
     </View>
   ),
-  "StyledView"
+  "StyledFormView",
 );
 
 export const DeleteDialog = ({}: DeleteDialogProps) => <></>;
@@ -278,4 +291,8 @@ export const Badge = ({
   children?: React.ReactNode;
   className?: string;
 }) => children;
-export const Icon = ({}: { source?: string; size?: number; className?: string }) => <></>;
+export const Icon = ({}: {
+  source?: string;
+  size?: number;
+  className?: string;
+}) => <></>;
