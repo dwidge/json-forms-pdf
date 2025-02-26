@@ -206,6 +206,7 @@ export const ArrayControlRenderer = ({
       label={label ?? ""}
       path={path}
       schema={schema}
+      arraySchema={schema}
       errors={errors}
       addItem={addItem}
       removeItems={removeItems}
