@@ -1,7 +1,7 @@
 {
   "private": "true",
   "name": "@dwidge/json-forms-pdf",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Pdf renderers for Json Forms.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "test": "node --test"
   },
   "peerDependencies": {
-    "@dwidge/class-name-rnw": "^0.0.4",
+    "@dwidge/class-name-rnw": "^0.0.5",
     "@jsonforms/core": "^3.4.0",
     "@jsonforms/react": "^3.4.0",
     "@react-pdf/layout": "3.6.4",
