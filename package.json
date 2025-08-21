@@ -37,9 +37,9 @@
     "@rneui/themed": "^4.0.0-rc.8",
     "ajv": "^8.17.1",
     "assert": "^2.1.0",
-    "react": "^18.2.0",
-    "react-native": "^0.74.5",
-    "react-native-web": "^0.19.12"
+    "react": "^19.0.0",
+    "react-native": "^0.79.5",
+    "react-native-web": "~0.20.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
